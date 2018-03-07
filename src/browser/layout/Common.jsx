@@ -1,7 +1,7 @@
 import React, { PureComponent as Component } from 'react';
 import RPT from 'prop-types';
 
-export default class HomeLayout extends Component {
+export default class CommonLayout extends Component {
 
   static propTypes = {
     children: RPT.any,

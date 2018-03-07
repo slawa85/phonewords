@@ -1,6 +1,3 @@
-import React from "react";
-import { render } from "react-dom";
+require('babel-polyfill');
 
-import HomePage from './HomePage';
-
-render(<HomePage />, document.getElementById('root'));
+require('./main')
