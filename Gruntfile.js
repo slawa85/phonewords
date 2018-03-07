@@ -7,7 +7,8 @@ module.exports = function(grunt) {
     browserify: {
       options: {
         browserifyOptions: {
-          debug: true
+          debug: true,
+          extensions: ['.jsx', '.js']
         }
       },
       js: {
@@ -39,7 +40,7 @@ module.exports = function(grunt) {
 
     watch: {
       javascript: {
-        files: ['src/browser/**/*.js'],
+        files: ['src/browser/**/*.js', 'src/browser/**/*.jsx'],
         tasks: ['browserify']
       },
       sass: {
