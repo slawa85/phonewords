@@ -1,13 +1,16 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import { connect } from 'react-redux';
 
+@connect((store) => {
+  return {
+    phonewords: store.phonewords
+  }
+})
 export default class PhonewordsList extends Component {
-
-  static propTypes = {
-    phonewords: RPT.array.isRequired,
-  };
-
   render() {
+    const { phonewords } = this.props;
+
     return (
       <section className="main">
         <ul className="todo-list">

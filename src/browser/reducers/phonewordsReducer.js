@@ -1,5 +1,5 @@
 export default (state={
-  phonewoords: [],
+  words: [],
   converting: false,
   converted: false,
   error: null
@@ -17,7 +17,7 @@ export default (state={
         ...state,
         converting: false,
         converted: true,
-        phonewoords: action.payload
+        phonewords: action.payload
       };
     }
   };

@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
 
-import phoneBook from './phonewordsReducer';
+import phonewords from './phonewordsReducer';
 
-export default combineReducers({ phoneBook })
+export default combineReducers({ phonewords })

@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import { connect } from 'react-redux';
 
 export default class Phonewords extends Component {
   render() {

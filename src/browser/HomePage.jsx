@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 
 import CommonLayout from './layout/Common';
 import Phonewords from './components/Phonewords';
+import PhonewordsList from './components/PhonewordsList';
 import Footer from './components/Footer';
 
 export default class HomePage extends Component {
@@ -10,6 +11,7 @@ export default class HomePage extends Component {
     return (
       <CommonLayout>
         <Phonewords/>
+        <PhonewordsList/>
         <Footer/>
       </CommonLayout>
     );

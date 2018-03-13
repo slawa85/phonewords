@@ -1,6 +1,13 @@
+import HomePage from './HomePage';
 import React from 'react';
+import store from './store';
+
+import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 
-import HomePage from './HomePage';
-
-render(<HomePage />, document.getElementById('root'));
+render(
+  <Provider store={store}>
+    <HomePage />
+  </Provider>,
+  document.getElementById('root')
+);
