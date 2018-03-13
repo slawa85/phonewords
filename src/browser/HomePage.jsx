@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import React, { Component } from 'react';
+import { render } from 'react-dom';
 
 import CommonLayout from './layout/Common';
 import Phonewords from './components/Phonewords';
