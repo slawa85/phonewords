@@ -15,19 +15,16 @@ const QWERTY = {
   '#':[';']
 };
 
-function Phoneword() {}
+module.exports = class Phoneword {
+  convert(buffer, numbers) {
+    if(numbers.length === 0){
+      return buffer.join('');
+    }
 
-Phoneword.prototype.convert = function(buffer, numbers) {
-  if(numbers.length === 0){
-    return buffer.join('');
+    let letters = QWERTY[`${numbers[0]}`] || [];
+
+    return letters.map(letter => {
+      return this.convert(buffer.concat(letter), numbers.slice(1))
+    }).reduce((acc, currentItem) => acc.concat(currentItem), []);
   }
-
-  let letters = QWERTY[`${numbers[0]}`] || [];
-
-  return letters.map(letter => {
-    return this.convert(buffer.concat(letter), numbers.slice(1))
-      .reduce((acc, currentItem) => acc.concat(currentItem), [])
-  });
 }
-
-module.exports = Phoneword;

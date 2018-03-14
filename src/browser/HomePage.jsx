@@ -11,7 +11,6 @@ export default class HomePage extends Component {
     return (
       <CommonLayout>
         <Phonewords/>
-        <PhonewordsList/>
         <Footer/>
       </CommonLayout>
     );

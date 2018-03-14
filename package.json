@@ -19,6 +19,8 @@
     "director": "^1.2.8",
     "ejs": "^2.5.1",
     "express": "^4.14.0",
+    "express-validation": "^1.0.2",
+    "joi": "^13.1.2",
     "morgan": "^1.9.0",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
@@ -59,7 +61,7 @@
             "react",
             "stage-2"
           ],
-          "plugins":[
+          "plugins": [
             "transform-decorators-legacy",
             "transform-class-properties"
           ]

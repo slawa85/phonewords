@@ -9,6 +9,11 @@ exports.index = (request, response) => {
 
 // Fetch all phonewords
 exports.all = (request, response) => {
-    let list = new Phoneword().convert([], request.params.number.split(''));
+  try{
+    const list = new Phoneword().convert([], String(request.params.number).split(''));
+
     response.status(200).send(list);
+  } catch(e) {
+    response.status(500).send({ error: 'Something went wrong!' })
+  }
 };

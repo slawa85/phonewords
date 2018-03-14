@@ -1,26 +1,26 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { connect } from 'react-redux';
+import React from 'react';
+import RPT from 'prop-types';
 
-@connect((store) => {
-  return {
-    phonewords: store.phonewords
-  }
-})
-export default class PhonewordsList extends Component {
-  render() {
-    const { phonewords } = this.props;
+const PhonewordsList = ({phonewords}) => {
+  console.log('asdas');
 
-    return (
-      <section className="main">
-        <ul className="todo-list">
+  return (
+    <section className="main">
+      <ul className="todo-list">
+        {phonewords.map(word => {
           <li className="todo">
             <div className="view">
               <label>ABC</label>
             </div>
           </li>
-        </ul>
-      </section>
-    );
-  }
+        })}
+      </ul>
+    </section>
+  );
 }
+
+PhonewordsList.propTypes = {
+  phonewords: RPT.array.isRequired,
+}
+
+export default PhonewordsList;
