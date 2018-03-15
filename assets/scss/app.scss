@@ -19,3 +19,8 @@
     font-weight: 400;
   }
 }
+.todo-list {
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+}

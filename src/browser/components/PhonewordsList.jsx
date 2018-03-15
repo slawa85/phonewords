@@ -2,18 +2,16 @@ import React from 'react';
 import RPT from 'prop-types';
 
 const PhonewordsList = ({phonewords}) => {
-  console.log('asdas');
-
   return (
     <section className="main">
       <ul className="todo-list">
-        {phonewords.map(word => {
-          <li className="todo">
-            <div className="view">
-              <label>ABC</label>
-            </div>
-          </li>
-        })}
+        {
+          phonewords.map(word => (
+            <li className="todo" key={word}>
+              <div className="view"><label>{word}</label></div>
+            </li>
+          ))
+        }
       </ul>
     </section>
   );

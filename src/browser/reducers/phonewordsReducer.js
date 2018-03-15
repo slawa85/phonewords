@@ -1,3 +1,5 @@
+import * as types from './constants';
+
 export default (state={
   words: [],
   converting: false,
@@ -6,18 +8,18 @@ export default (state={
 }, action) => {
 
   switch(action.type) {
-    case 'CONVERT_NUMBER': {
+    case types.CONVERT_NUMBER_PENDING: {
       return {...state, converting: true};
     }
-    case 'CONVERT_NUMBER_REJECTED': {
+    case types.CONVERT_NUMBER_REJECTED: {
       return {...state, converting: false, error: action.payload};
     }
-    case 'CONVERT_NUMBER_FULFILLED': {
+    case types.CONVERT_NUMBER_FULFILLED: {
       return {
         ...state,
         converting: false,
         converted: true,
-        phonewords: action.payload
+        words: action.payload
       };
     }
   };

@@ -1,9 +1,10 @@
+import RPT from 'prop-types';
 import React, { PureComponent } from 'react';
-import { render } from 'react-dom';
 import { connect } from 'react-redux';
+import { render } from 'react-dom';
 
-import { fetchPhonewords } from '../actions/phonewordActions';
 import PhonewordsList from './PhonewordsList';
+import { fetchPhonewords } from '../actions/phonewordActions';
 
 @connect((store) => {
   return {
@@ -15,7 +16,18 @@ import PhonewordsList from './PhonewordsList';
 })
 export default class Phonewords extends PureComponent {
 
+  static propTypes = {
+    phonewords: RPT.array.isRequired,
+    converted: RPT.bool,
+    converting: RPT.bool,
+    error: RPT.string
+  }
+
   fetchPhonewords = () => {
+    const number = this.textInput.value;
+    if (!number.length)
+      return null;
+
     this.props.dispatch(fetchPhonewords(this.textInput.value));
   }
 
@@ -28,13 +40,11 @@ export default class Phonewords extends PureComponent {
         <header className="header">
           <h1>Phonewords</h1>
           <input
-            type="number"
             className="new-todo"
             autoFocus
             autoComplete="off"
             placeholder="What needs to be done?"
             ref={(input) => this.textInput = input}
-            maxLength="5"
           />
           { error && <p className="error">{error}</p> }
           <button className={`button${converting ? ' loading' : ''}`} onClick={this.fetchPhonewords}>Fetch</button>
