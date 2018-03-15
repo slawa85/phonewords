@@ -25,7 +25,7 @@ export default class Phonewords extends PureComponent {
 
   fetchPhonewords = () => {
     const number = this.textInput.value;
-    if (!number.length)
+    if (!number.trim().length)
       return null;
 
     this.props.dispatch(fetchPhonewords(this.textInput.value));
@@ -46,9 +46,11 @@ export default class Phonewords extends PureComponent {
             placeholder="What needs to be done?"
             ref={(input) => this.textInput = input}
           />
-          { error && <p className="error">{error}</p> }
-          <button className={`button${converting ? ' loading' : ''}`} onClick={this.fetchPhonewords}>Fetch</button>
+          <button className="button" onClick={this.fetchPhonewords} disabled={converting}>
+            {converting ? <i className="fa fa-circle-o-notch fa-spin"></i> : 'Fetch'}
+          </button>
         </header>
+        { error && <p className="error">{error}</p> }
 
         {displayWords && <PhonewordsList phonewords={phonewords}/>}
       </div>

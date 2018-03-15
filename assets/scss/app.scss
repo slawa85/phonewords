@@ -17,10 +17,31 @@
     cursor: pointer;
     height: 30px;
     font-weight: 400;
+
+    .fa {
+      margin-left: 5px;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+    }
   }
 }
-.todo-list {
-  columns: 3;
-  -webkit-columns: 3;
-  -moz-columns: 3;
+ul.todo-list {
+  max-height: 450px;
+  overflow: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  li {
+    &:nth-child(even) {
+      background: #f8f8f8;
+    }
+  }
+}
+
+.error {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ff0000;
+  padding-left: 60px;
 }

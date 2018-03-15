@@ -9,7 +9,7 @@ export function fetchPhonewords(number) {
       dispatch({type: types.CONVERT_NUMBER_FULFILLED, payload: response.data});
     })
     .catch((error) => {
-      dispatch({type: types.CONVERT_NUMBER_REJECTED, payload: error});
+      dispatch({type: types.CONVERT_NUMBER_REJECTED, payload: error.response.data.message});
     });
   }
 }

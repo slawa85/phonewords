@@ -8,6 +8,6 @@ module.exports = {
     statusText: 'Unprocessable Entity'
   },
   params: {
-    number: Joi.number().integer().min(0).max(999999),
+    number: Joi.number().integer().max(999999999),
   }
 }
