@@ -4,6 +4,7 @@
   "description": "Converts a given numeric string into a list of corresponding words in the style of T9",
   "main": "index.js",
   "scripts": {
+    "build:dev": "webpack --display-error-details --mode development",
     "start": "node bin/server.js"
   },
   "repository": {
@@ -47,12 +48,16 @@
     "grunt-nodemon": "^0.4.2",
     "grunt-sass": "^1.2.1",
     "nodemon": "^1.10.2",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.13"
   },
   "browserify": {
     "transform": [
-      "browserify-shim", [
-        "babelify", {
+      "browserify-shim",
+      [
+        "babelify",
+        {
           "presets": [
             "env",
             "react",

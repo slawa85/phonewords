@@ -11,9 +11,9 @@
   <body>
     <section class="todoapp" id="root"></section>
     <% if (env === 'production') { %>
-      <script src="/static/app.min.js"></script>
+      <script src="/dist/bundle.min.js"></script>
     <% } else { %>
-      <script src="/static/app.js"></script>
+      <script src="/dist/bundle.js"></script>
     <% } %>
   </body>
 </html>
